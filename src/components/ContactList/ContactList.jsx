@@ -2,11 +2,11 @@ import css from "./ContactList.module.css";
 import Contact from "../Contact/Contact";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { fetchContacts } from "../../redux/contactsOps";
+import { fetchContacts } from "../../redux/contacts/operations";
 import {
   selectContacts,
   selectFilteredContacts,
-} from "../../redux/contactsSlice";
+} from "../../redux/contacts/selectors";
 
 export default function ContactList() {
   const dispatch = useDispatch();
@@ -19,9 +19,7 @@ export default function ContactList() {
     <ul className={css.list}>
       {contacts.length > 0 ? (
         filteredData.map((user) => (
-          <li key={user.id} className={css.listItem}>
-            <Contact user={user} />
-          </li>
+          <li key={user.id} className={css.listItem}></li>
         ))
       ) : (
         <p>No contacts available</p>
