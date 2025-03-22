@@ -1,0 +1,24 @@
+.listInfo {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.listWrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.listWrap p {
+  margin: 0;
+}
+
+.btn {
+  display: block;
+  height: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
