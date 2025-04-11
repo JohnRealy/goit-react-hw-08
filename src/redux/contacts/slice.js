@@ -15,6 +15,7 @@ const slice = createSlice({
       .addCase(fetchContacts.fulfilled, (state, action) => {
         state.items = action.payload;
         state.isLoading = false;
+        state.isError = null;
       })
       .addCase(fetchContacts.pending, (state, action) => {
         state.isLoading = true;
