@@ -19,7 +19,9 @@ export default function ContactList() {
     <ul className={css.list}>
       {contacts.length > 0 ? (
         filteredData.map((user) => (
-          <li key={user.id} className={css.listItem}></li>
+          <li key={user.id} className={css.listItem}>
+            <Contact user={user} />
+          </li>
         ))
       ) : (
         <p>No contacts available</p>

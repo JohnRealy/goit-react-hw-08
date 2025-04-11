@@ -9,6 +9,13 @@ import {
   selectError,
   selectLoading,
 } from "../../redux/contacts/selectors";
+import { Routes, Route } from "react-router-dom";
+import Home from "../../pages/Home/Home";
+import Header from "../Header/Header";
+import NotFound from "../../pages/NotFound/NotFound";
+import Login from "../../pages/Login/Login";
+import Contacts from "../../pages/Contacts/Contacts";
+import Register from "../../pages/Register/Register";
 
 export default function App() {
   const contacts = useSelector(selectContacts);
@@ -25,6 +32,14 @@ export default function App() {
       {loading && <h2>Loading...</h2>}
       {error && <h2>Error {error}</h2>}
       {contacts === null ? <p>This Phonebook is empty</p> : <ContactList />}
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
