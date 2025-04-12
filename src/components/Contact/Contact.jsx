@@ -1,7 +1,7 @@
 import { HiOutlineUser, HiOutlinePhone } from "react-icons/hi";
 import css from "./Contact.module.css";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contacts/operations";
+import { deleteContact, updateContact } from "../../redux/contacts/operations";
 
 export default function Contact({ user }) {
   const dispatch = useDispatch();
@@ -17,6 +17,13 @@ export default function Contact({ user }) {
           <p>{user.number}</p>
         </div>
       </div>
+      <button
+        type="button"
+        className={css.btn}
+        onClick={() => dispatch(updateContact(user))}
+      >
+        Edit
+      </button>
       <button
         type="button"
         className={css.btn}

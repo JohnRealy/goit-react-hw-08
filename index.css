@@ -190,3 +190,7 @@ a {
   height: 50vh;
   overflow: scroll;
 }
+
+.authParagraph {
+  color: black;
+}
